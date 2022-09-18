@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './Example.scss';
+import styles from './Example.module.scss';
 
 export interface ExampleProps {
-  children: string | JSX.Element | JSX.Element[];
+  children?: string | JSX.Element | JSX.Element[];
 }
 
 export const Example: React.FC<ExampleProps> = ({ children }) => {
