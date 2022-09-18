@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Example.module.scss';
+import styles from './Example.scss';
 
 export interface ExampleProps {
   children?: string | JSX.Element | JSX.Element[];
