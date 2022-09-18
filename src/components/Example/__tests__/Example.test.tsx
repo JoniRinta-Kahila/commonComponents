@@ -1,14 +1,14 @@
 import React from 'react';
-import { Dsa, DsaProps } from '..';
+import { Example, ExampleProps } from '..';
 import { render, screen } from '@testing-library/react';
 
-const defaultProps: DsaProps = {
+const defaultProps: ExampleProps = {
   
 };
 
-const setup = (props = defaultProps) => render(<Dsa {...props} />);
+const setup = (props = defaultProps) => render(<Example {...props} />);
 
-describe('Dsa', () => {
+describe('Example', () => {
   it('renders', () => {
     setup({children: 'foo'});
     expect(screen.getByText('foo'));
