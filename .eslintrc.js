@@ -57,6 +57,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': rules.WARN,
     'prefer-spread': rules.WARN,
     'no-unused-vars': rules.OFF,
+    'react/no-unescaped-entities': rules.OFF,
   },
   settings: {
     react: {

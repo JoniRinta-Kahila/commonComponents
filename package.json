@@ -1,5 +1,15 @@
 {
+  "name": "@rintsin/common-components",
+  "description": "My common components",
+  "version": "0.0.0",
+  "private": false,
+  "main": "index.js",
+  "module": "index.esm.js",
+  "types": "index.d.ts",
   "scripts": {
+    "lint": "npm run lint:script && npm run lint:style",
+    "lint:script": "eslint ./src --ext .js,.jsx,.ts,.tsx",
+    "lint:style": "stylelint ./src",
     "hygen": "hygen",
     "component:new": "hygen component with-prompt",
     "storybook": "start-storybook -p 6006",
