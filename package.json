@@ -8,6 +8,10 @@
   "types": "index.d.ts",
   "scripts": {
     "build": "rollup -c",
+    "build:docs": "build-storybook -s ./src/assets -c .storybook -o docs",
+    "dev": "npm run storybook",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
+    "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "lint": "npm run lint:script && npm run lint:style",
     "lint:script": "eslint ./src --ext .js,.jsx,.ts,.tsx",
     "lint:style": "stylelint ./src",
@@ -16,7 +20,8 @@
     "test:watch": "npm run test --watch",
     "hygen": "hygen",
     "component:new": "hygen component with-prompt",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./src/assets -c .storybook",
+    "build-sb-docs": "build-storybook -s ./src/assets -c .storybook -o docs",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
