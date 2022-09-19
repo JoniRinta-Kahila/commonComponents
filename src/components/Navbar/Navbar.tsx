@@ -41,10 +41,18 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navbarRef: LegacyRef<HTMLUListElement> | undefined | any = useRef(null);
   const burgerMenuRef: LegacyRef<HTMLUListElement> | undefined | any = useRef(null);
 
+  // close burgermenu on click outside of menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (burgerMenuRef.current && !burgerMenuRef.current.contains(event.target)) {
-        setMenuVisibility(false);
+        const brgrMenuBtnElNames = ['svg', 'path'];
+        const clickedElementName = Object.values((event as any).path as HTMLElement[])[0].tagName;
+
+        if (brgrMenuBtnElNames.includes(clickedElementName)) {
+          setMenuVisibility(true); // true because onClick set menu visibility to !menuVisibility after this handler.
+        } else {
+          setMenuVisibility(false);
+        }
       }
     };
 
