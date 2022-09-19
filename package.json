@@ -1,11 +1,19 @@
 {
+  "version": "0.0.0",
   "name": "@rintsin/common-components",
   "description": "My common components",
-  "version": "0.0.0",
-  "private": false,
+  "homepage": "https://jonirinta-kahila.github.io/commonComponents",
+  "bugs": {
+    "url": "https://github.com/JoniRinta-Kahila/commonComponents/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoniRinta-Kahila/commonComponents.git"
+  },
   "main": "index.js",
   "module": "index.esm.js",
   "types": "index.d.ts",
+  "private": false,
   "scripts": {
     "build": "rollup -c",
     "build:docs": "build-storybook -s ./src/assets -c .storybook -o docs",
