@@ -11,6 +11,7 @@ export interface <%= h.changeCase.pascalCase(name) %>Props {
 export const <%= h.changeCase.pascalCase(name) %>: React.FC<<%= h.changeCase.pascalCase(name) %>Props> = ({ children }) => {
   return (
     <div className={styles.container}>
+      <%= h.changeCase.pascalCase(name) %>
       <div>{children}</div>
     </div>
   );
