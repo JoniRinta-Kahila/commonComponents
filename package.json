@@ -23,7 +23,8 @@
     "storybook": "start-storybook -p 6006 -s ./src/assets -c .storybook",
     "build-sb-docs": "build-storybook -s ./src/assets -c .storybook -o docs",
     "build-storybook": "build-storybook",
-    "publish": "npx semantic-release --no-ci"
+    "publish": "npx semantic-release --no-ci",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
@@ -59,7 +60,7 @@
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.4",
-    "husky": "^8.0.1",
+    "husky": "^8.0.0",
     "hygen": "^6.2.11",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.0.3",
