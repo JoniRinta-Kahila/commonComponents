@@ -1,0 +1,46 @@
+.somebuttons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.somebuttons-facebook {
+  list-style: none;
+}
+
+.somebuttons-facebook svg {
+  padding: 6px 2px 0 4px;
+  background: #3d5899;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.somebuttons-instagram {
+  list-style: none;
+}
+
+.somebuttons-instagram svg {
+  padding: 3px;
+  border-radius: 4px;
+  color: #f09433;
+  color: linear-gradient(45deg, #bc1888 0%, #cc2366 25%, #dc2743 50%, #e6683c 75%, #f09433 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+
+.somebuttons-whatsapp {
+  list-style: none;
+}
+
+.somebuttons-whatsapp svg {
+  padding: 3px;
+  background: #44bb54;
+  border-radius: 4px;
+  color: #fff;
+}
