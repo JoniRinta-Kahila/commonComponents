@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.2.0...v1.3.0) (2022-09-21)
+
+
+### Features
+
+* **tooltip:** new tooltip component ([ad545c5](https://github.com/JoniRinta-Kahila/commonComponents/commit/ad545c5f027b9b495ccd9c221de62030d55bfb44))
+
 ## [1.2.0](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.1.0...v1.2.0) (2022-09-20)
 
 
