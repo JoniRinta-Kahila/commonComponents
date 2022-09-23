@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.3.0...v1.3.1) (2022-09-23)
+
+
+### Bug Fixes
+
+* missing peer dependencies ([e4a4510](https://github.com/JoniRinta-Kahila/commonComponents/commit/e4a451046e83521deb4ef18d59b43d110f4dbd33))
+
 ## [1.3.0](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.2.0...v1.3.0) (2022-09-21)
 
 
