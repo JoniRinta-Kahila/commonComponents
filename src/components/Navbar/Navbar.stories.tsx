@@ -3,7 +3,6 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Navbar } from './Navbar';
 import Repo from '../../assets/repo.svg';
-import { DocsPage } from '@storybook/addon-docs';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -52,9 +51,12 @@ export default {
   },
   parameters: {
     layout: 'fullscreen',
-    docs: { page: DocsPage, inlineStories: false, iframeHeight: 1200, height: 600 },
     actions: {
       handles: ['click', '.click-action']
+    },
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
     }
   },
 

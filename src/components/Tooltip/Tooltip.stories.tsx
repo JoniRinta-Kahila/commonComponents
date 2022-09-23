@@ -3,19 +3,20 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Tooltip } from './Tooltip';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const Story = {
   title: "Components/Tooltip",
   component: Tooltip,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
   args: {
     children: 'HOVER ON ME',
     title: 'TOOLTIP',
   },
   parameters: {
     layout: 'centered',
-  }
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  },
 } as unknown as ComponentMeta<typeof Tooltip>;
 
 const Template: ComponentStory<typeof Tooltip> = (args) => <Tooltip {...args} />

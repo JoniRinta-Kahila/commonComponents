@@ -1,15 +1,30 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { SomeButtons, Whatsapp, Instagram, Facebook } from '.';
+import {
+  SomeButtons,
+  Whatsapp,
+  Instagram,
+  Facebook,
+} from '.';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const Story = {
   title: "Components/SomeButtons",
   component: SomeButtons,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  parameters: {
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  },
   argTypes: {
-    
+    children: {
+      name: 'children',
+      description: 'someButton',
+      type: 'symbol'
+    }
   }
 } as ComponentMeta<typeof SomeButtons>;
 
@@ -21,11 +36,11 @@ export const IG = Template.bind({});
 export const WA = Template.bind({});
 
 Default.args = {
-  children: <>
+  children: <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100px'}}>
     <Facebook facebookLink='https://facebook.com' />
     <Instagram instagramLink='https://instagram.com/' />
     <Whatsapp whatsappLink='https://whatsapp.com' />
-  </>
+  </div>
 }
 
 FB.args = {

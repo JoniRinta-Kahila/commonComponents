@@ -10,8 +10,61 @@ const Story = {
   component: Card,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   parameters: {
-    layout: 'fullscreen'
-  }
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  },
+  argTypes: {
+    className: {
+      name: 'className',
+      description: 'for define styles of the card',
+      type: 'string',
+      defaultValue: '',
+    },
+    background: {
+      name: 'background',
+      description: 'background color',
+      type: 'string',
+      defaultValue: '#fffff',
+    },
+    height: {
+      name: 'height',
+      description: 'card height',
+      type: 'string' || 'number',
+    },
+    maxHeight: {
+      name: 'maxHeight',
+      description: 'max height for the card',
+      type: 'string' || 'number' ,
+    },
+    minHeight: {
+      name: 'minHeight',
+      description: 'min height for the card',
+      type: 'string' || 'number',
+    },
+    width: {
+      name: 'width',
+      description: 'card width',
+      type: 'string' || 'number',
+    },
+    maxWidth: {
+      name: 'width',
+      description: 'max width of the card',
+      type: 'string' || 'number',
+    },
+    minWidth: {
+      name: 'minWidth',
+      description: 'min width of the card',
+      type: 'string' || 'number',
+    },
+    children: {
+      name: 'children',
+      description: 'card content',
+      type: 'symbol',
+    }
+  },
 } as ComponentMeta<typeof Card>;
 
 const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />
