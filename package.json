@@ -165,6 +165,8 @@
     ]
   },
   "dependencies": {
+    "@storybook/addons": "^6.5.12",
+    "@storybook/theming": "^6.5.12",
     "react-icons": "^4.4.0"
   }
 }
