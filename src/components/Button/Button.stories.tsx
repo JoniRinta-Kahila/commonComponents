@@ -8,12 +8,35 @@ export default {
   title: "Components/Button",
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: {
+      control: 'color',
+      name: 'Background color',
+      description: 'Set background color for button',
+    },
+    label: {
+      name: 'Label',
+      defaultValue: 'Button',
+      description: 'Set button label',
+      type: 'string'
+    },
+    primary: {
+      name: 'Primary',
+      defaultValue: false,
+      description: 'Button type',
+      type: 'boolean',
+    },
+    onClick: {
+      name: 'onClick',
+      type: 'function',
+      description: 'onClick',
+    }
   },
+  parameters: {
+    layout: 'centered',
+  }
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
-
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

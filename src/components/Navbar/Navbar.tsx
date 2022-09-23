@@ -2,17 +2,16 @@ import React, { LegacyRef, useEffect, useRef, useState } from 'react';
 import './Navbar.scss';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-export enum ENavbarPosition {
-  'absolute' = 'absolute',
-  'fixed' = 'fixed',
-  'inherit' = 'inherit',
-  'initial' = 'initial',
-  'relative' = 'relative',
-  'revert' = 'revert',
-  'static' = 'static',
-  'sticy' = 'sticy',
-  'unset' = 'unset',
-}
+export type navbarPosition =
+  | 'absolute'
+  | 'fixed'
+  | 'inherit'
+  | 'initial'
+  | 'relative'
+  | 'revert'
+  | 'static'
+  | 'sticy'
+  | 'unset';
 
 export interface NavbarProps {
   logoSrc?: string;
@@ -22,7 +21,7 @@ export interface NavbarProps {
   hamburgerMenuRenderer?: React.ReactNode;
   hideNavbarOnScroll?: boolean;
   mobileMenuDefaultOpen?: boolean;
-  navbarPosition?: ENavbarPosition;
+  navbarPosition?: navbarPosition;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -33,7 +32,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   hamburgerMenuRenderer = null,
   hideNavbarOnScroll = false,
   mobileMenuDefaultOpen = false,
-  navbarPosition = ENavbarPosition.fixed,
+  navbarPosition = 'fixed',
 }) => {
   const [menuVisibility, setMenuVisibility] = useState<boolean>(mobileMenuDefaultOpen);
   const [prevScrollPos, setPrevScrollPos] = useState(0);

@@ -1,21 +1,67 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ENavbarPosition, Navbar } from './Navbar';
-import Repo from '../../assets/repo.svg'
+import { Navbar } from './Navbar';
+import Repo from '../../assets/repo.svg';
+import { DocsPage } from '@storybook/addon-docs';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-const Story = {
+export default {
   title: "Components/Navbar",
   component: Navbar,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
+  argTypes: {
+    navbarPosition: {
+      name: 'navbarPosition',
+      defaultValue: 'initial',
+      type: 'string',
+      description: 'Navbar position',
+    },
+    logoSrc: {
+      name: 'logoSrc',
+      description: 'Logo source',
+      type: 'string',
+    },
+    logoLink: {
+      name: 'logoLink',
+      type: 'string',
+      description: 'Logo link',
+    },
+    hamburgerMenuRenderer: {
+      name: 'hamburgerMenuRenderer',
+      description: 'Mobile dropdown menu renderer',
+      type: 'symbol',
+    },
+    menuRendererCenter: {
+      name: 'menuRendererCenter',
+      defaultValue: null,
+      description: 'Render menu to middle of the navbar',
+      type: 'symbol',
+    },
+    menuRendererEnd: {
+      name: 'menuRendererEnd',
+      description: 'Render menu to end of the navbar',
+      type: 'symbol',
+    },
+    hideNavbarOnScroll: {
+      name: 'hideNavbarOnScroll',
+      defaultValue: true,
+      description: 'Hide navbar on scroll down',
+      type: 'boolean',
+    }
+  },
   parameters: {
-    layout: 'fullscreen'
-  }
+    layout: 'fullscreen',
+    docs: { page: DocsPage, inlineStories: false, iframeHeight: 1200, height: 600 },
+    actions: {
+      handles: ['click', '.click-action']
+    }
+  },
+
 } as ComponentMeta<typeof Navbar>;
 
-const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />
+const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
+
 
 export const Default = Template.bind({});
 
@@ -23,7 +69,8 @@ const itemStyle = {
   color: 'azure',
   fontFamily: 'monospace',
   fontWeight: 700,
-  margin: '12px'
+  margin: '12px',
+  cursor: 'pointer',
 }
 
 const Menu = (isMobile: boolean): React.ReactNode => (
@@ -33,10 +80,10 @@ const Menu = (isMobile: boolean): React.ReactNode => (
     padding: '0 20px'
 
   }}>
-    <a style={itemStyle} href="#">LINK-1</a>
-    <a style={itemStyle} href="#">LINK-2</a>
-    <a style={itemStyle} href="#">LINK-3</a>
-    <a style={itemStyle} href="#">LINK-4</a>
+    <p className='link' style={itemStyle}>LINK-1</p>
+    <p className='link' style={itemStyle}>LINK-2</p>
+    <p className='link' style={itemStyle}>LINK-3</p>
+    <p className='link' style={itemStyle}>LINK-4</p>
   </div>
 )
 
@@ -45,10 +92,7 @@ Default.args = {
   menuRendererEnd: Menu(false),
   hamburgerMenuRenderer: Menu(true),
   mobileMenuDefaultOpen: false,
-  navbarPosition: ENavbarPosition.fixed,
+  navbarPosition: 'initial',
   logoLink: '#',
-  hideNavbarOnScroll: true,
-  menuRendererCenter: null,
+  hideNavbarOnScroll: true
 }
-
-export default Story;
