@@ -15,7 +15,7 @@ export const parameters = {
     default: 'grey',
     values: [
       {
-        name: 'gray',
+        name: 'grey',
         value: '#F3F5FB',
       },
       {
