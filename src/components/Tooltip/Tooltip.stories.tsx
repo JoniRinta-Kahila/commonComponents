@@ -3,9 +3,26 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Tooltip } from './Tooltip';
 
-const Story = {
+export default {
   title: "Components/Tooltip",
   component: Tooltip,
+  argTypes: {
+    direction: {
+      description: 'the direction in which the tooltip is displayed',
+    },
+    title: {
+      description: 'tooltip text',
+    },
+    children: {
+      description: 'the element on which the tooltip is set',
+    },
+    toolTipBackground: {
+      description: 'tooltip background color',
+    },
+    toolTipColor: {
+      description: 'tooltip color',
+    }
+  },
   args: {
     children: 'HOVER ON ME',
     title: 'TOOLTIP',
@@ -17,7 +34,7 @@ const Story = {
       canvas: { hidden: true }
     }
   },
-} as unknown as ComponentMeta<typeof Tooltip>;
+} as ComponentMeta<typeof Tooltip>;
 
 const Template: ComponentStory<typeof Tooltip> = (args) => <Tooltip {...args} />
 
@@ -39,7 +56,3 @@ HTMLInside.args = {
   <h3>HTML</h3>
  </div>
 }
-
-
-
-export default Story;
