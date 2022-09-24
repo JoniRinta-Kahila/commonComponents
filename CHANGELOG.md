@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.3.1...v1.4.0) (2022-09-24)
+
+
+### Features
+
+* **checkbox:** new checkbox and checkbox group elements ([f77dcee](https://github.com/JoniRinta-Kahila/commonComponents/commit/f77dcee07fd1559fe9d7416de99585a5495142dc))
+* **tooltip:** add props for change colors of tooltip text and background ([d530490](https://github.com/JoniRinta-Kahila/commonComponents/commit/d530490e5a3c89b0cb5f6bae1cb36ee724f25a35))
+
 ## [1.3.1](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.3.0...v1.3.1) (2022-09-23)
 
 
