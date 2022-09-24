@@ -33,6 +33,8 @@ I have created a library of components that I use frequently. These components a
 ## Features
 * Button
 * Card
+* Checkbox
+  * Group
 * Collapsible
 * Navbar
 * Sosical media buttons
