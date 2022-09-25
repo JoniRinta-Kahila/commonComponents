@@ -1,13 +1,19 @@
-.radiobutton-container {
+/*
+  DART VARIATION
+*/
+
+.radiobutton-dart {
   display: block;
   position: relative;
   float: left;
-  width: 100%;
   height: calc(((var(--radiobutton-size) / 5) * 2) + var(--radiobutton-size));
   cursor: pointer;
+  margin: var(--radiobutton-margin);
+  padding: var(--radiobutton-padding);
+  user-select: none;
 }
 
-.radiobutton-container p {
+.radiobutton-dart p {
   color: var(--radiobutton-label-color);
   display: block;
   position: relative;
@@ -34,20 +40,20 @@
   transition: filter 0.25s linear;
 }
 
-.radiobutton-container input {
+.radiobutton-dart input {
   position: absolute;
   visibility: hidden;
 }
 
-.radiobutton-container input:checked ~ p {
+.radiobutton-dart input:checked ~ p {
   color: var(--radiobutton-label-c-color);
 }
 
-.radiobutton-container:hover input:not(:checked) ~ p {
+.radiobutton-dart:hover input:not(:checked) ~ p {
   filter: brightness(var(--radiobutton-hover-brightness));
 }
 
-.radiobutton-container .radiobutton-check {
+.radiobutton-dart .radiobutton-dart-check {
   display: block;
   position: absolute;
   border-color: var(--radiobutton-circle-color);
@@ -63,17 +69,17 @@
   transition: filter 0.25s linear;
 }
 
-.radiobutton-container input:checked ~ .radiobutton-check {
+.radiobutton-dart input:checked ~ .radiobutton-dart-check {
   border-width: calc(var(--radiobutton-size) / 5);
   border-style: solid;
   border-color: var(--radiobutton-circle-c-color);
 }
 
-.radiobutton-container:hover input:not(:checked) ~ .radiobutton-check {
+.radiobutton-dart:hover input:not(:checked) ~ .radiobutton-dart-check {
   filter: brightness(var(--radiobutton-hover-brightness));
 }
 
-.radiobutton-container .radiobutton-check::before {
+.radiobutton-dart .radiobutton-dart-check::before {
   display: block;
   position: absolute;
   content: '';
@@ -96,6 +102,61 @@
   transition: background 0.25s linear;
 }
 
-.radiobutton-container input:checked ~ .radiobutton-check::before {
+.radiobutton-dart input:checked ~ .radiobutton-dart-check::before {
+  background-color: var(--radiobutton-dot-c-color);
+}
+
+/*
+  - - - - SHUTTER VARIATION - - - -
+*/
+
+.radiobutton-shutter {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  margin: var(--radiobutton-margin);
+  padding: var(--radiobutton-padding);
+  user-select: none;
+}
+
+.radiobutton-shutter input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.radiobutton-shutter .radiobutton-shutter-check {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 99em;
+  transition: 0.25s ease;
+  color: var(--radiobutton-label-color);
+}
+
+.radiobutton-shutter .radiobutton-shutter-check:hover {
+  background-color: var(--radiobutton-hover-background);
+}
+
+.radiobutton-shutter input:checked + .radiobutton-shutter-check {
+  background-color: var(--radiobutton-hover-background);
+  color: var(--radiobutton-label-c-color);
+}
+
+.radiobutton-shutter .radiobutton-shutter-check::before {
+  content: '';
+  display: flex;
+  flex-shrink: 0;
+  background-color: var(--radiobutton-dot-color);
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em var(--radiobutton-circle-color);
+}
+
+.radiobutton-shutter input:checked + .radiobutton-shutter-check::before {
+  box-shadow: inset 0 0 0 0.4375em var(--radiobutton-circle-c-color);
   background-color: var(--radiobutton-dot-c-color);
 }

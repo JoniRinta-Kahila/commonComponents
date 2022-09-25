@@ -2,23 +2,32 @@ import React, { useCallback } from 'react';
 import './RadioButton.scss';
 
 export interface RadioButtonProps {
+  variation?: 'dartBoard' | 'shutter';
   label?: string;
-  checked?: boolean;
+  defaultChecked?: boolean;
   name?: string;
   value?: string | number | readonly string[];
   disabled?: boolean;
   styles?: {
-    checked?: {
-      circle?: string;
-      dot?: string;
-      label?: string;
+    colors?: {
+      checked?: {
+        circle?: string;
+        dot?: string;
+        label?: string;
+        background?: string;
+      };
+      default?: {
+        circle?: string;
+        dot?: string;
+        label?: string;
+      };
     };
-    default?: {
-      circle?: string;
-      label?: string;
-    };
+    size?: string;
+    margin?: string | number;
+    padding?: string | number;
     hover?: {
       brightness?: number | string;
+      backgroundColor?: string;
     };
   };
 }
@@ -29,25 +38,57 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
   name,
   value,
   disabled = false,
+  variation = 'shutter',
+  defaultChecked = false,
 }) => {
   const genVars = useCallback(
     () => ({
-      '--radiobutton-circle-c-color': styles?.checked?.circle ?? '#00ff8c',
-      '--radiobutton-dot-c-color': styles?.checked?.dot ?? '#00ff8c',
-      '--radiobutton-label-c-color': styles?.checked?.label ?? '#00ff8c',
-      '--radiobutton-circle-color': styles?.default?.circle ?? '#888',
-      '--radiobutton-label-color': styles?.default?.label ?? '#888',
+      // checked colors
+      '--radiobutton-circle-c-color': styles?.colors?.checked?.circle ?? '#00ff8c',
+      '--radiobutton-dot-c-color': styles?.colors?.checked?.dot ?? '#00ff8c',
+      '--radiobutton-label-c-color': styles?.colors?.checked?.label ?? '#00ff8c',
+      '--radiobutton-c-background': styles?.colors?.checked?.background ?? 'transparent',
+
+      // default colors
+      '--radiobutton-circle-color': styles?.colors?.default?.circle ?? '#888',
+      '--radiobutton-label-color': styles?.colors?.default?.label ?? '#888',
+      '--radiobutton-dot-color': styles?.colors?.default?.dot ?? '#888',
+
+      // hover
       '--radiobutton-hover-brightness': styles?.hover?.brightness ?? '50%',
-      '--radiobutton-size': '25px',
+      '--radiobutton-hover-background': styles?.hover?.backgroundColor ?? 'transparent',
+
+      // sizing
+      '--radiobutton-size': styles?.size ?? '25px',
+      '--radiobutton-margin': styles?.margin ?? 0,
+      '--radiobutton-padding': styles?.padding ?? 0,
     }),
     [styles]
   );
+
+  const theme = {
+    dartBoard: {
+      container: 'radiobutton-dart',
+      check: 'radiobutton-dart-check',
+    },
+    shutter: {
+      container: 'radiobutton-shutter',
+      check: 'radiobutton-shutter-check',
+    },
+  };
+
   return (
-    <label className={'radiobutton-container'} style={genVars() as React.CSSProperties}>
-      <input type='radio' name={name} value={value} disabled={disabled} />
-      <p>{label}</p>
-      <span className='radiobutton-check'>
-        <div className='radiobutton-dot' />
+    <label className={theme[variation].container} style={genVars() as React.CSSProperties}>
+      <input
+        type='radio'
+        name={name}
+        value={value}
+        disabled={disabled}
+        defaultChecked={defaultChecked}
+      />
+      {variation === 'dartBoard' ? <p>{label}</p> : null}
+      <span className={theme[variation].check}>
+        {variation === 'shutter' ? <p>{label}</p> : null}
       </span>
     </label>
   );
