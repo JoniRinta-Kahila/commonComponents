@@ -1,0 +1,101 @@
+.radiobutton-container {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: calc(((var(--radiobutton-size) / 5) * 2) + var(--radiobutton-size));
+  cursor: pointer;
+}
+
+.radiobutton-container p {
+  color: var(--radiobutton-label-color);
+  display: block;
+  position: relative;
+  font-weight: 300;
+
+  /*
+    font-size: 1.35em;
+  */
+  font-size: calc(var(--radiobutton-size) + 0px);
+
+  /* 40% of --radiobutton-size */
+  --xtra-padding: calc(var(--radiobutton-size) * (1 - 0.4));
+
+  /* padding left: to move paragrapg to the right side of the button */
+  --padding-left: calc(((var(--radiobutton-size) / 5) * 2) + var(--radiobutton-size));
+
+  padding-left: calc(var(--padding-left) + var(--xtra-padding));
+
+  /* when button size is 25px
+  margin: calc(var(--radiobutton-size) * (1 - 0.8)) auto;
+  */
+  margin: 0;
+  margin-top: 4px;
+  transition: filter 0.25s linear;
+}
+
+.radiobutton-container input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.radiobutton-container input:checked ~ p {
+  color: var(--radiobutton-label-c-color);
+}
+
+.radiobutton-container:hover input:not(:checked) ~ p {
+  filter: brightness(var(--radiobutton-hover-brightness));
+}
+
+.radiobutton-container .radiobutton-check {
+  display: block;
+  position: absolute;
+  border-color: var(--radiobutton-circle-color);
+  border-style: solid;
+
+  /* border-width: 5px; */
+  border-width: calc(var(--radiobutton-size) / 5);
+  border-radius: 100%;
+  height: var(--radiobutton-size);
+  width: var(--radiobutton-size);
+  top: 0;
+  left: 0;
+  transition: filter 0.25s linear;
+}
+
+.radiobutton-container input:checked ~ .radiobutton-check {
+  border-width: calc(var(--radiobutton-size) / 5);
+  border-style: solid;
+  border-color: var(--radiobutton-circle-c-color);
+}
+
+.radiobutton-container:hover input:not(:checked) ~ .radiobutton-check {
+  filter: brightness(var(--radiobutton-hover-brightness));
+}
+
+.radiobutton-container .radiobutton-check::before {
+  display: block;
+  position: absolute;
+  content: '';
+  border-radius: 100%;
+
+  /* if --radiobutton-size is 25
+  height: 15px;
+  width: 15px;
+  */
+  height: calc(var(--radiobutton-size) * (1 - 0.4));
+  width: calc(var(--radiobutton-size) * (1 - 0.4));
+
+  /* if --radiobutton-size is 25
+  top: 5px;
+  left: 5px;
+  */
+  top: calc(var(--radiobutton-size) / 5);
+  left: calc(var(--radiobutton-size) / 5);
+  margin: auto;
+  transition: background 0.25s linear;
+}
+
+.radiobutton-container input:checked ~ .radiobutton-check::before {
+  background-color: var(--radiobutton-dot-c-color);
+}

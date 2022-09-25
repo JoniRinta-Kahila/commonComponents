@@ -5,3 +5,4 @@ export * from './Card';
 export * from './Button';
 export * from './Tooltip';
 export * from './Checkbox';
+export * from './RadioButton';
