@@ -33,11 +33,14 @@ I have created a library of components that I use frequently. These components a
 ## Features
 * Button
 * Card
-* Checkbox
-  * Group
+* Inputs
+  * Checkbox
+    * Group
+  * Radio buttons
+    * Two different variation
+  * Sosical media buttons
 * Collapsible
 * Navbar
-* Sosical media buttons
 * Tooltip
 
 </br>
