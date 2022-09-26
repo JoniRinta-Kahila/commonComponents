@@ -10,7 +10,7 @@ import {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const Story = {
-  title: "Components/SomeButtons",
+  title: "Components/Inputs/SomeButtons",
   component: SomeButtons,
   parameters: {
     layout: 'centered',

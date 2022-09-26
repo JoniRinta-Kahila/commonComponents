@@ -4,7 +4,7 @@ import { RadioButton } from '..';
 import { argTypes } from './storyArgTypes';
 
 export default {
-  title: 'Components/RadioButton',
+  title: 'Components/Inputs/RadioButton',
   component: RadioButton,
   argTypes: argTypes,
   parameters: {

@@ -4,7 +4,7 @@ import { RadioButton, RadioButtonStyleProps } from '..';
 import { argTypes } from './storyArgTypes';
 
 export default {
-  title: 'Components/RadioButton/variations',
+  title: 'Components/Inputs/RadioButton/variations',
   component: RadioButton,
   argTypes: argTypes,
   parameters: {

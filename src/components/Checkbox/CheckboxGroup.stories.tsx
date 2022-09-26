@@ -6,7 +6,7 @@ import { CheckboxGoupProps, CheckboxGroup } from '.';
 // import { useState } from '@storybook/addons';
 
 export default {
-  title: "Components/Checkbox",
+  title: "Components/Inputs/Checkbox",
   component: CheckboxGroup,
   argTypes: {
     children: {
