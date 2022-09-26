@@ -93,4 +93,4 @@ const Template: ComponentStory<typeof RadioButton> = (args) => (
   </div>
 );
 
-export const Styling = Template.bind({});
+export const Colors = Template.bind({});
