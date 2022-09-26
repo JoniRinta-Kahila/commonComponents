@@ -1,7 +1,4 @@
-/*
-  DART VARIATION
-*/
-
+/* #region DART VARIATION */
 .radiobutton-dart {
   display: block;
   position: relative;
@@ -106,10 +103,9 @@
   background-color: var(--radiobutton-dot-c-color);
 }
 
-/*
-  - - - - SHUTTER VARIATION - - - -
-*/
+/* #endregion */
 
+/* #region SHUTTER VARIATION */
 .radiobutton-shutter {
   display: flex;
   position: relative;
@@ -132,6 +128,7 @@
   border-radius: 99em;
   transition: 0.25s ease;
   color: var(--radiobutton-label-color);
+  font-family: var(--radiobutton-fontfamily);
 }
 
 .radiobutton-shutter .radiobutton-shutter-check:hover {
@@ -148,15 +145,17 @@
   display: flex;
   flex-shrink: 0;
   background-color: var(--radiobutton-dot-color);
-  width: 1.5em;
-  height: 1.5em;
+  width: var(--radiobutton-size);
+  height: var(--radiobutton-size);
+  margin-right: calc(var(--radiobutton-size) / 4);
   border-radius: 50%;
-  margin-right: 0.375em;
   transition: 0.25s ease;
-  box-shadow: inset 0 0 0 0.125em var(--radiobutton-circle-color);
+  box-shadow: inset 0 0 0 calc(var(--radiobutton-size) / 12.5) var(--radiobutton-circle-color);
 }
 
 .radiobutton-shutter input:checked + .radiobutton-shutter-check::before {
-  box-shadow: inset 0 0 0 0.4375em var(--radiobutton-circle-c-color);
+  box-shadow: inset 0 0 0 calc(var(--radiobutton-size) / 2.5) var(--radiobutton-circle-c-color);
   background-color: var(--radiobutton-dot-c-color);
 }
+
+/* #endregion */
