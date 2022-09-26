@@ -1,10 +1,12 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { RadioButton } from './RadioButton';
+import { RadioButton } from '..';
+import { argTypes } from './storyArgTypes';
 
 export default {
   title: 'Components/RadioButton/styled',
   component: RadioButton,
+  argTypes: argTypes,
   parameters: {
     layout: 'centered',
     viewMode: 'docs',
@@ -19,24 +21,22 @@ const Template: ComponentStory<typeof RadioButton> = (args) => (
     <div
       style={{
         display: 'flex',
-        alignItems: 'center',
         padding: '8px',
         width: '100%',
-        background: '#999',
+        background: '#888',
       }}
     >
       <RadioButton
         {...args}
+        name='color'
+        label='YES!'
         variation='dartBoard'
-        name='size'
-        label='Big'
         styles={{
-          size: '30px',
-          margin: '0 10px',
+          margin: 'auto',
           colors: {
             default: {
-              circle: '#fff',
-              label: '#fff',
+              circle: 'green',
+              label: 'green',
             },
             checked: {
               circle: 'green',
@@ -44,46 +44,42 @@ const Template: ComponentStory<typeof RadioButton> = (args) => (
               label: 'green',
             },
           },
-          hover: {
-            brightness: '75%',
-          },
         }}
       />
       <RadioButton
         {...args}
-        variation='dartBoard'
-        name='size'
-        label='DEFAULT'
+        variation='shutter'
+        name='color'
+        label='Maybe..'
         styles={{
-          margin: '0 10px',
           colors: {
             default: {
-              circle: '#fff',
-              label: '#fff',
+              circle: 'yellow',
+              label: 'yellow',
             },
             checked: {
               circle: 'yellow',
               dot: 'yellow',
               label: 'yellow',
+              background: '#1a12ff56',
             },
           },
           hover: {
-            brightness: '75%',
+            backgroundColor: '#1a12ff56',
           },
         }}
       />
       <RadioButton
         {...args}
         variation='dartBoard'
-        name='size'
-        label='SMALL'
+        name='color'
+        label='NO!'
         styles={{
-          size: '15px',
-          margin: '0 10px',
+          margin: 'auto',
           colors: {
             default: {
-              circle: '#fff',
-              label: '#fff',
+              circle: 'red',
+              label: 'red',
             },
             checked: {
               circle: 'red',
@@ -91,13 +87,10 @@ const Template: ComponentStory<typeof RadioButton> = (args) => (
               label: 'red',
             },
           },
-          hover: {
-            brightness: '75%',
-          },
         }}
       />
     </div>
   </div>
 );
 
-export const Sizing = Template.bind({});
+export const Styling = Template.bind({});

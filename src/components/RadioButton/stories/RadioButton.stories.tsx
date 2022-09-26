@@ -1,10 +1,24 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { RadioButton } from './RadioButton';
+import { RadioButton } from '..';
+import { argTypes } from './storyArgTypes';
 
 export default {
   title: 'Components/RadioButton',
   component: RadioButton,
+  argTypes: argTypes,
+  parameters: {
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+    docs: {
+      description: {
+        component: '**`Default`**',
+      },
+    },
+  },
 } as ComponentMeta<typeof RadioButton>;
 
 const Template: ComponentStory<typeof RadioButton> = (args) => <RadioButton {...args} />;
