@@ -6,3 +6,4 @@ export * from './Button';
 export * from './Tooltip';
 export * from './Checkbox';
 export * from './RadioButton';
+export * from './Modal';

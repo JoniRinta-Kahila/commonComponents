@@ -1,0 +1,137 @@
+/*
+.modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  background-color: #fff;
+  z-index: 123456;
+}
+
+.modal-content-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  background-color: var(--test);
+}
+*/
+
+@mixin animated-border {
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(to right, orangered 100%, orangered 100%),
+    linear-gradient(to bottom, orangered 100%, orangered 100%),
+    linear-gradient(to right, orangered 100%, orangered 100%),
+    linear-gradient(to bottom, orangered 100%, orangered 100%);
+  background-size: 100% 3px, 3px 100%, 100% 3px, 3px 100%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  animation: highlight-border 0.5s cubic-bezier(0.19, 1, 0.22, 1) 1;
+  animation-play-state: paused;
+}
+
+.modal-provider-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-provider-container .modal-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-provider-container .modal-container .modal-container-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  background-color: #000;
+}
+
+.modal-provider-container .modal-container .modal-content {
+  @include animated-border;
+
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  background-color: #fff;
+  z-index: 123456;
+}
+
+.modal-provider-container .modal-container .modal-content .modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-provider-container .modal-container .modal-content .modal-header button {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: medium;
+}
+
+.modal-provider-container .modal-container .modal-content .modal-bottom-buttons button {
+  margin: 0.5rem;
+}
+
+.modal-provider-container .modal-container .modal-content .modal-header button:hover {
+  background-color: silver;
+  border-color: azure;
+  color: #fff;
+}
+
+.modal-provider-container .modal-container .modal-content .modal-bottom-buttons {
+  margin-top: 1rem;
+  margin-bottom: -0.5rem;
+  text-align: center;
+}
+
+@keyframes highlight-border {
+  0% {
+    background-size: 0 3px, 3px 0, 0 3px, 3px 0;
+  }
+
+  25% {
+    background-size: 100% 3px, 3px 0, 0 3px, 3px 0;
+  }
+
+  50% {
+    background-size: 100% 3px, 3px 100%, 0 3px, 3px 0;
+  }
+
+  75% {
+    background-size: 100% 3px, 3px 100%, 100% 3px, 3px 0;
+  }
+
+  100% {
+    background-size: 100% 3px, 3px 100%, 100% 3px, 3px 100%;
+  }
+}
