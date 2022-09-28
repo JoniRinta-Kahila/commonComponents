@@ -27,6 +27,13 @@ export default {
     type: 'text',
     label: 'Label',
   },
+  parameters: {
+    layout: 'centered',
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  },
 } as ComponentMeta<typeof TextField>;
 
 const Template: ComponentStory<typeof TextField> = (args) => <TextField {...args} />;
