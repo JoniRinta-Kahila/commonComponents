@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.5.0](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.4.0...v1.5.0) (2022-09-28)
+
+
+### Features
+
+* **radiobutton:** add onChange prop ([3bf1a79](https://github.com/JoniRinta-Kahila/commonComponents/commit/3bf1a7996eb639d10328b8e5324343df0b24f54f))
+* **radiobutton:** new radio button component ([b8e89f0](https://github.com/JoniRinta-Kahila/commonComponents/commit/b8e89f050b3926ac39d76d2fd37af5be76afba22))
+* **radiobutton:** new variation ([5aa24cf](https://github.com/JoniRinta-Kahila/commonComponents/commit/5aa24cf14033b6ee13136f4b1fb111c97ecc8d89))
+
 ## [1.4.0](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.3.1...v1.4.0) (2022-09-24)
 
 
