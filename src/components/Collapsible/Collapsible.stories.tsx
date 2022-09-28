@@ -5,7 +5,7 @@ import { Collapsible } from './Collapsible';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const Story = {
-  title: "Components/Collapsible",
+  title: "Display/Collapsible",
   component: Collapsible,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

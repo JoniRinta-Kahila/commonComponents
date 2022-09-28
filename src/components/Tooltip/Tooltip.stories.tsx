@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Tooltip } from './Tooltip';
 
 export default {
-  title: "Components/Tooltip",
+  title: "Display/Tooltip",
   component: Tooltip,
   argTypes: {
     direction: {

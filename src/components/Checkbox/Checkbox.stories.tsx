@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Checkbox } from './Checkbox';
 
 export default {
-  title: "Components/Inputs/Checkbox",
+  title: "Inputs/Checkbox",
   component: Checkbox,
   argTypes: {
     background: {
