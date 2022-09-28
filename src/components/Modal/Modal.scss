@@ -1,36 +1,3 @@
-/*
-.modal {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  background-color: #fff;
-  z-index: 123456;
-}
-
-.modal-content-bg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.5;
-  background-color: var(--test);
-}
-*/
-
 @mixin animated-border {
   background-repeat: no-repeat;
   background-image:

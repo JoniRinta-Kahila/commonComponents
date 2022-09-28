@@ -1,8 +1,8 @@
 import React from 'react';
-import ModalContextProvider, { IModalContext } from '../ModalContextProvider';
+import ModalContextProvider, { ModalContextProviderProps } from '../ModalContextProvider';
 import { render, screen } from '@testing-library/react';
 
-const defaultProps: IModalContext = { children: <div>ASD</div> };
+const defaultProps: ModalContextProviderProps = { children: <div>ASD</div> };
 
 const setup = (props = defaultProps) => render(<ModalContextProvider {...props} />);
 

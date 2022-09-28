@@ -2,7 +2,7 @@ import React, { createContext, ReactNode, useContext, useState, useMemo, useRef 
 import { Button } from '../Button';
 import './Modal.scss';
 
-export interface IModalContext {
+export interface ModalContextProviderProps {
   children?: ReactNode;
 }
 
@@ -15,9 +15,9 @@ export interface IModalContext {
  * @param header string
  * @require `(acceptLabel | cancelLabel): string` if require === true
  */
-export type ModalConfirmationOptions = {
-  header: string;
+export type ModalOptions = {
   content: ReactNode | string;
+  header?: string;
   acceptLabel?: string;
   cancelLabel?: string;
   showCloseOnRightCorner?: boolean;
@@ -28,17 +28,17 @@ export type ModalConfirmationOptions = {
   | { require: true | boolean; cancelLabel: string }
 );
 
-interface ModalConfirmationContext {
-  prompt: (options: ModalConfirmationOptions) => Promise<boolean>;
+interface IModalContext {
+  modal: (options: ModalOptions) => Promise<boolean>;
 }
 
-type ModalConfirmationInternalOptions = ModalConfirmationOptions & {
+type ModalInternalOptions = ModalOptions & {
   onAccept: () => void;
   onCancel: () => void;
   onClose: () => void;
 };
 
-const ModalContext = createContext<ModalConfirmationContext | undefined>(undefined);
+const ModalContext = createContext<IModalContext | undefined>(undefined);
 
 export const useModalContext = () => {
   const context = useContext(ModalContext);
@@ -50,23 +50,19 @@ export const useModalContext = () => {
   return context;
 };
 
-/**
- *
- * @param children ReactNode
- * @returns `React.FC<IModalContext>`
- */
-const ModalContextProvider: React.FC<IModalContext> = ({ children }) => {
-  const [options, setOptions] = useState<ModalConfirmationInternalOptions | undefined>(undefined);
+const ModalContextProvider: React.FC<ModalContextProviderProps> = ({ children }) => {
+  const [options, setOptions] = useState<ModalInternalOptions | undefined>(undefined);
   const modalContentRef = useRef<HTMLDivElement>(null);
-  const context: ModalConfirmationContext = useMemo(
+
+  const context: IModalContext = useMemo(
     () => ({
-      prompt(options) {
+      modal(options) {
         return new Promise((resolve, reject) => {
           setOptions({
             ...options,
             onAccept: () => resolve(true),
             onCancel: () => resolve(false),
-            onClose: () => reject('Cancelled'),
+            onClose: () => (options.require === undefined ? null : reject('Cancelled')),
             acceptLabel: options.acceptLabel || '',
             cancelLabel: options.cancelLabel || '',
           });
@@ -112,7 +108,7 @@ const ModalContextProvider: React.FC<IModalContext> = ({ children }) => {
             <div className='modal-container-overlay' onClick={handleClose} />
             <div ref={modalContentRef} className='modal-content'>
               <div className='modal-header'>
-                <h2>{options?.header}</h2>
+                {options?.header && <h2>{options.header}</h2>}
                 {options?.showCloseOnRightCorner && !options.require && (
                   <Button label='X' onClick={handleClose} size='small' />
                 )}

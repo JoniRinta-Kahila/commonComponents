@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ModalContextProvider, { useModalContext } from './ModalContextProvider';
-import { Checkbox } from '../Checkbox';
-import { Button } from '../Button';
+import ModalContextProvider, { useModalContext } from '../ModalContextProvider';
+import { Checkbox } from '../../Checkbox';
+import { Button } from '../../Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -11,9 +11,6 @@ export default {
   parameters: {
     layout: 'centered',
     viewMode: 'story',
-    previewTabs: {
-      // canvas: { hidden: true },
-    },
     docs: {
       description: {
         component:
@@ -31,20 +28,19 @@ export default {
 } as ComponentMeta<typeof ModalContextProvider>;
 
 const Template: ComponentStory<typeof ModalContextProvider> = () => {
-  const modal = useModalContext();
+  const { modal } = useModalContext();
   const [require, setRequire] = useState<boolean>(true);
   const [answer, setAnswer] = useState<string>('Click propmpt');
   const prompt = () => {
-    modal
-      .prompt({
-        content:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam suscipit ducimus eligendi, eius dolore provident aut.',
-        header: 'MODAL',
-        cancelLabel: 'NO',
-        acceptLabel: 'YES',
-        require: require,
-        showCloseOnRightCorner: true,
-      })
+    modal({
+      content:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam suscipit ducimus eligendi, eius dolore provident aut.',
+      header: 'MODAL',
+      cancelLabel: 'NO',
+      acceptLabel: 'YES',
+      require: require,
+      showCloseOnRightCorner: true,
+    })
       .then((value) => setAnswer(value ? 'Accepted' : 'Refuced'))
       .catch((err) => setAnswer(err));
   };
@@ -69,4 +65,4 @@ const Template: ComponentStory<typeof ModalContextProvider> = () => {
   );
 };
 
-export const Default = Template.bind({});
+export const Propmpt = Template.bind({});
