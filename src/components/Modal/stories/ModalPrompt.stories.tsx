@@ -65,4 +65,4 @@ const Template: ComponentStory<typeof ModalContextProvider> = () => {
   );
 };
 
-export const Propmpt = Template.bind({});
+export const Prompt = Template.bind({});

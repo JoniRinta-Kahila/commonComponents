@@ -39,7 +39,9 @@ I have created a library of components that I use frequently. These components a
   * Radio buttons
     * Two different variation
   * Sosical media buttons
+  * Text field
 * Collapsible
+* Modal with prompt feature
 * Navbar
 * Tooltip
 
