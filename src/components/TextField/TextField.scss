@@ -1,0 +1,106 @@
+.textfield-container {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+.textfield-container input {
+  /* TODO FONT FAMILY HERE */
+  width: 100%;
+  outline: none;
+  font-size: 1.3rem;
+  padding: 5px 1px;
+  border: 0;
+  border-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--textfield-default-bordercolor, #000);
+  background-color: var(--textfield-default-inputbackgroundcolor, transparent);
+  color: var(--textfield-default-inputcolor, #000);
+}
+
+.textfield-container input::placeholder {
+  color: transparent;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.textfield-container label {
+  font-size: 1rem;
+  color: var(--textfield-default-labelcolor, #000);
+  display: block;
+  position: absolute;
+  top: 0;
+  transition: 200ms;
+  user-select: none;
+}
+
+.textfield-container input:placeholder-shown ~ label {
+  font-size: 1.3rem;
+  top: 20px;
+  cursor: text;
+}
+
+.textfield-container input:focus {
+  border-width: 3px;
+  padding-bottom: 5px;
+  font-weight: 500;
+
+  /* colors with fallback */
+  color: var(--textfield-focus-inputcolor, var(--textfield-default-inputcolor, #000));
+
+  /* background colors with fallback */
+  background-color:
+    var(
+      --textfield-focus-inputbackgroundcolor,
+      var(--textfield-default-inputbackgroundcolor, transparent)
+    );
+
+  /* border colors with fallback */
+  border-color: var(--textfield-focus-bordercolor, var(--textfield-default-bordercolor, #000));
+}
+
+.textfield-container input:focus ~ label {
+  position: absolute;
+  display: block;
+  top: 0;
+  font-size: 1rem;
+  font-weight: 700;
+
+  /* colors with fallback */
+  color: var(--textfield-focus-labelcolor, var(--textfield-default-labelcolor, #000));
+}
+
+.textfield-container input:required ~ label::after {
+  content: '*';
+}
+
+/* INVALID ERROR COLORS */
+
+/* INPUT ERROR COLORS WHEN FIELD IS NOT EMPTY */
+
+.textfield-container input:invalid:required:not(:placeholder-shown) ~ label::after {
+  content: '*';
+  color: var(--textfield-invalid-labelcolor, var(--textfield-default-labelcolor, #e10000));
+}
+
+.textfield-container input:invalid:not(:placeholder-shown),
+.textfield-container input:required:invalid:not(:placeholder-shown) {
+  /* colors with fallback */
+  color: var(--textfield-invalid-inputcolor, var(--textfield-default-inputcolor, #000));
+
+  /* border-color colors with fallback */
+  border-color: var(--textfield-invalid-bordercolor, var(--textfield-default-bordercolor, #000));
+
+  /* background colors with fallback */
+  background-color:
+    var(
+      --textfield-invalid-inputbackgroundcolor,
+      var(--textfield-default-inputbackgroundcolor, #ff9494)
+    );
+}
+
+.textfield-container input:invalid:not(:placeholder-shown) ~ label {
+  font-weight: 900;
+
+  /* colors with fallback */
+  color: var(--textfield-invalid-labelcolor, var(--textfield-default-labelcolor, #e10000));
+}
