@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.6.0](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.5.0...v1.6.0) (2022-09-28)
+
+
+### Features
+
+* **modal:** new modal context provider with prompt feature ([7891140](https://github.com/JoniRinta-Kahila/commonComponents/commit/789114039ab0a9aaab0e18a14ff96752084d0b51))
+* **textfield:** new textfield component ([accc5e7](https://github.com/JoniRinta-Kahila/commonComponents/commit/accc5e79a23e7088dac136ac855296acee32d693))
+
+
+### Bug Fixes
+
+* conflict on merging modal ([70ee691](https://github.com/JoniRinta-Kahila/commonComponents/commit/70ee6914d9264de02ea03ad1d4fde571bab28fcf))
+
 ## [1.5.0](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.4.0...v1.5.0) (2022-09-28)
 
 
