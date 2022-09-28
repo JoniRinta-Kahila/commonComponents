@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1759" height="300" viewBox="0 0 1759 300">
+  <g id="Group_1" data-name="Group 1" transform="translate(-96 -390)">
+    <g id="react-1" transform="translate(96 390)" style="isolation: isolate">
+      <path id="Path_1" data-name="Path 1" d="M0,0H300V300H0Z" fill="rgba(188,95,95,0)"/>
+      <circle id="Ellipse_1" data-name="Ellipse 1" cx="25.087" cy="25.087" r="25.087" transform="translate(124.681 124.731)" fill="rgba(188,95,95,0)"/>
+      <path id="Path_2" data-name="Path 2" d="M319.156,1191.9c33.676,0,64.964,4.833,88.551,12.95,28.42,9.783,45.9,24.615,45.9,38.045,0,13.994-18.521,29.755-49.038,39.861-23.072,7.644-53.441,11.64-85.409,11.64-32.781,0-63.812-3.747-87.15-11.723-29.522-10.09-47.306-26.049-47.306-39.778,0-13.323,16.689-28.038,44.711-37.8,23.678-8.249,55.737-13.19,89.745-13.19Z" transform="translate(-169.388 -1093.086)" fill="none" stroke="#5d00ff" stroke-miterlimit="10" stroke-width="10"/>
+      <path id="Path_3" data-name="Path 3" d="M875.177,468.584c16.821-29.174,36.644-53.863,55.463-70.237,22.674-19.731,44.255-27.458,55.886-20.751,12.121,6.989,16.523,30.907,10.031,62.4-4.908,23.81-16.614,52.106-32.59,79.8-16.374,28.395-35.127,53.407-53.689,69.64-23.487,20.536-46.2,27.964-58.091,21.108-11.54-6.657-15.951-28.461-10.421-57.619C846.442,528.276,858.182,498.04,875.177,468.584Z" transform="translate(-769.805 -344.119)" fill="none" stroke="#5d00ff" stroke-miterlimit="10" stroke-width="10"/>
+      <path id="Path_4" data-name="Path 4" d="M876.031,522.792c-16.871-29.149-28.362-58.647-33.154-83.129-5.77-29.5-1.691-52.056,9.932-58.78,12.112-7.014,35.027,1.119,59.07,22.467,18.181,16.142,36.843,40.416,52.86,68.09,16.424,28.37,28.735,57.1,33.518,81.288,6.06,30.609,1.152,54-10.728,60.869-11.532,6.674-32.623-.39-55.124-19.748-19-16.357-39.338-41.627-56.375-71.058Z" transform="translate(-770.617 -347.05)" fill="none" stroke="#5d00ff" stroke-miterlimit="10" stroke-width="10"/>
+    </g>
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="25" cy="25" r="25" transform="translate(221 515)" fill="#5d00ff"/>
+    <text id="_rintsin_common-components" data-name="@rintsin/common-components" transform="translate(424 569)" fill="#5d00ff" stroke="rgba(0,17,255,0.55)" stroke-width="2" font-size="100" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">@rintsin/common-components</tspan></text>
+    <line id="Line_1" data-name="Line 1" y2="300" transform="translate(415.5 390)" fill="none" stroke="#5d00ff" stroke-width="5"/>
+  </g>
+</svg>
