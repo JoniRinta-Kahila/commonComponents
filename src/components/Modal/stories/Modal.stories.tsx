@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ModalContextProvider, { useModalContext } from '../ModalContextProvider';
+import { ModalContextProvider, useModalContext } from '../ModalContextProvider';
 import { Button } from '../../Button';
 import { Card, Content, Title } from '../../Card';
 

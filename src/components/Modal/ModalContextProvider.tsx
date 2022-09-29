@@ -50,7 +50,7 @@ export const useModalContext = () => {
   return context;
 };
 
-const ModalContextProvider: React.FC<ModalContextProviderProps> = ({ children }) => {
+export const ModalContextProvider: React.FC<ModalContextProviderProps> = ({ children }) => {
   const [options, setOptions] = useState<ModalInternalOptions | undefined>(undefined);
   const modalContentRef = useRef<HTMLDivElement>(null);
 
@@ -130,5 +130,3 @@ const ModalContextProvider: React.FC<ModalContextProviderProps> = ({ children })
     </ModalContext.Provider>
   );
 };
-
-export default ModalContextProvider;

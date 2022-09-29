@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalContextProvider, { ModalContextProviderProps } from '../ModalContextProvider';
+import { ModalContextProvider, ModalContextProviderProps } from '../ModalContextProvider';
 import { render, screen } from '@testing-library/react';
 
 const defaultProps: ModalContextProviderProps = { children: <div>ASD</div> };
