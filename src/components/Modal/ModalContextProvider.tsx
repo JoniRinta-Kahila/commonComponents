@@ -1,4 +1,12 @@
-import React, { createContext, ReactNode, useContext, useState, useMemo, useRef } from 'react';
+import React, {
+  createContext,
+  ReactNode,
+  useContext,
+  useState,
+  useMemo,
+  useRef,
+  useEffect,
+} from 'react';
 import { Button } from '../Button';
 import './Modal.scss';
 
@@ -22,6 +30,7 @@ export type ModalOptions = {
   cancelLabel?: string;
   showCloseOnRightCorner?: boolean;
   require?: boolean;
+  enableScroll?: boolean;
 } & (
   | { require?: false }
   | { require: true | boolean; acceptLabel: string }
@@ -57,16 +66,20 @@ export const ModalContextProvider: React.FC<ModalContextProviderProps> = ({ chil
   const context: IModalContext = useMemo(
     () => ({
       modal(options) {
-        return new Promise((resolve, reject) => {
-          setOptions({
-            ...options,
-            onAccept: () => resolve(true),
-            onCancel: () => resolve(false),
-            onClose: () => (options.require === undefined ? null : reject('Cancelled')),
-            acceptLabel: options.acceptLabel || '',
-            cancelLabel: options.cancelLabel || '',
-          });
-        });
+        // fix problems with SSR
+        return typeof window === 'undefined'
+          ? new Promise((resolve, reject) => reject('Window is undefined'))
+          : new Promise((resolve, reject) => {
+              setOptions({
+                ...options,
+                onAccept: () => resolve(true),
+                onCancel: () => resolve(false),
+                onClose: () => (options.require === undefined ? null : reject('Cancelled')),
+                acceptLabel: options.acceptLabel || '',
+                cancelLabel: options.cancelLabel || '',
+                enableScroll: options.enableScroll,
+              });
+            });
       },
     }),
     []
@@ -100,13 +113,40 @@ export const ModalContextProvider: React.FC<ModalContextProviderProps> = ({ chil
     options?.onClose && options.onClose();
   };
 
+  useEffect(() => {
+    if (!options || (options && options.enableScroll)) {
+      document.body.style.overflow = options ? 'hidden' : '';
+    }
+  }, [options]);
+
+  // Content is ReactNode
+  if (options && typeof options.content !== 'string') {
+    return (
+      <ModalContext.Provider value={context}>
+        <div className='modal-provider-container'>
+          <div className='modal-container'>
+            <div className='modal-container-overlay' onClick={handleClose} />
+            <div ref={modalContentRef} className='modal-content'>
+              {options.content}
+            </div>
+          </div>
+        </div>
+        {children}
+      </ModalContext.Provider>
+    );
+  }
+
+  // Content is Text
   return (
     <ModalContext.Provider value={context}>
       <div className='modal-provider-container'>
         {!!options && (
           <div className='modal-container'>
             <div className='modal-container-overlay' onClick={handleClose} />
-            <div ref={modalContentRef} className='modal-content'>
+            <div
+              ref={modalContentRef}
+              className={['modal-content', 'modal-text-content'].join(' ')}
+            >
               <div className='modal-header'>
                 {options?.header && <h2>{options.header}</h2>}
                 {options?.showCloseOnRightCorner && !options.require && (

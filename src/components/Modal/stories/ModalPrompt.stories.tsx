@@ -9,7 +9,7 @@ export default {
   title: 'Display/Modal',
   component: ModalContextProvider,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
     viewMode: 'story',
     docs: {
       description: {
@@ -49,7 +49,9 @@ const Template: ComponentStory<typeof ModalContextProvider> = () => {
       style={{
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
         flexDirection: 'column',
+        height: '100vh',
       }}
     >
       <Checkbox

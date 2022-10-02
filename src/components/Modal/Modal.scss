@@ -14,6 +14,7 @@
 .modal-provider-container {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .modal-provider-container .modal-container {
@@ -36,16 +37,20 @@
   bottom: 0;
   opacity: 0.5;
   background-color: #000;
+  z-index: 49000;
 }
 
 .modal-provider-container .modal-container .modal-content {
-  @include animated-border;
-
   margin: 15% auto;
   padding: 20px;
+  z-index: 50000;
+}
+
+.modal-provider-container .modal-container .modal-text-content {
+  @include animated-border;
+
   border: 1px solid #888;
   background-color: #fff;
-  z-index: 123456;
 }
 
 .modal-provider-container .modal-container .modal-content .modal-header {

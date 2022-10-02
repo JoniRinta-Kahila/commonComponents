@@ -8,7 +8,7 @@ export default {
   title: 'Display/Modal',
   component: ModalContextProvider,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
     viewMode: 'story',
     docs: {
       description: {
@@ -31,8 +31,9 @@ const Template: ComponentStory<typeof ModalContextProvider> = () => {
 
   const display = () =>
     modal({
+      showCloseOnRightCorner: true,
       content: (
-        <Card>
+        <Card width='300px' background='#fff'>
           <Title text='Hello, World' />
           <Content>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus ab deleniti
@@ -43,7 +44,15 @@ const Template: ComponentStory<typeof ModalContextProvider> = () => {
     });
 
   return (
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        height: '100vh',
+      }}
+    >
       <Button label='Display modal' primary size='large' onClick={display} />
     </div>
   );
