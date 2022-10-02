@@ -75,6 +75,22 @@ const itemStyle = {
   cursor: 'pointer',
 }
 
+const Logo: React.ReactNode = (
+  <div>
+    <a href="" style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textDecoration: 'none',
+      color: '#fff'
+    }}>
+      <img src={Repo} alt='logo' />
+      <p style={{ margin: 0 }}>Lorem, ipsum.</p>
+    </a>
+  </div>
+)
+
 const Menu = (isMobile: boolean): React.ReactNode => (
   <div style={{
     display: 'flex',
@@ -90,11 +106,10 @@ const Menu = (isMobile: boolean): React.ReactNode => (
 )
 
 Default.args = {
-  logoSrc: Repo,
   menuRendererEnd: Menu(false),
   hamburgerMenuRenderer: Menu(true),
   mobileMenuDefaultOpen: false,
   navbarPosition: 'initial',
-  logoLink: '#',
-  hideNavbarOnScroll: true
+  hideNavbarOnScroll: true,
+  logoRenderer: Logo,
 }

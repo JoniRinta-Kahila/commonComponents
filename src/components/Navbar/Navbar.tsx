@@ -14,21 +14,19 @@ export type navbarPosition =
   | 'unset';
 
 export interface NavbarProps {
-  logoSrc?: string;
-  logoLink?: string;
   menuRendererCenter?: React.ReactNode;
   menuRendererEnd?: React.ReactNode;
   hamburgerMenuRenderer?: React.ReactNode;
+  logoRenderer?: React.ReactNode;
   hideNavbarOnScroll?: boolean;
   mobileMenuDefaultOpen?: boolean;
   navbarPosition?: navbarPosition;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  logoSrc = undefined,
-  logoLink = '.',
   menuRendererCenter = null,
   menuRendererEnd = null,
+  logoRenderer = null,
   hamburgerMenuRenderer = null,
   hideNavbarOnScroll = false,
   mobileMenuDefaultOpen = false,
@@ -84,12 +82,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       data-testid='test-burger'
       data-position={navbarPosition}
     >
-      {/* Logo */}
-      <div className={'logo'}>
-        <a href={logoLink}>
-          <img src={logoSrc} alt='logo' height={30} width='auto' />
-        </a>
-      </div>
+      {/* logorenderer */}
+      <div className='logoRenderer'>{logoRenderer}</div>
 
       {/* linkrenderer center */}
       <div className={'navbar-menu-renderer-center'} style={{ marginLeft: 'auto' }}>

@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   transition: top 0.3s;
-  z-index: 10000;
+  z-index: 48000;
 
   &[data-position~='absolute'] {
     position: absolute;
@@ -48,8 +48,10 @@
   }
 }
 
-.container .logo {
+.container .logoRenderer {
   margin: 0 0 0 28px;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .container .hamburger {
