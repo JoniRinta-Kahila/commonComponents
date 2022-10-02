@@ -18,7 +18,7 @@
 }
 
 .modal-provider-container .modal-container {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 49000;
 }
 
 .modal-provider-container .modal-container .modal-container-overlay {

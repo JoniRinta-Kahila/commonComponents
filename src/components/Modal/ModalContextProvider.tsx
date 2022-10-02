@@ -114,7 +114,7 @@ export const ModalContextProvider: React.FC<ModalContextProviderProps> = ({ chil
   };
 
   useEffect(() => {
-    if (!options || (options && options.enableScroll)) {
+    if (!options || (options && !options.enableScroll)) {
       document.body.style.overflow = options ? 'hidden' : '';
     }
   }, [options]);
