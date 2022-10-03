@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.2](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.6.1...v1.6.2) (2022-10-03)
+
+
+### Bug Fixes
+
+* **textfield:** fix clicking to the label does not focus the text field ([4afe399](https://github.com/JoniRinta-Kahila/commonComponents/commit/4afe399ffdd51341f5725662b570844678a11784))
+
 ## [1.6.1](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.6.0...v1.6.1) (2022-10-02)
 
 
