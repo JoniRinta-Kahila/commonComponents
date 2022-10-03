@@ -28,6 +28,7 @@ export interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   type?: 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url';
   // variation?: 'basic' | 'outline';
+  id?: string;
   name?: string;
   styles?: TextFieldStylesProps;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -37,6 +38,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   label = 'Label',
   type = 'text',
   name = `${type}_input_${label}`,
+  id = `${type}_input_${label}_${Math.floor(Math.random() * 690000)}`,
   styles,
   ...rest
 }) => {
@@ -56,8 +58,8 @@ export const TextField: React.FC<TextFieldProps> = ({
   };
   return (
     <div style={generateVariables()} className='textfield-container' id='label'>
-      <input type={type} placeholder={name} name={name} {...rest} />
-      <label>{label}</label>
+      <input type={type} id={id} placeholder={name} name={name} {...rest} />
+      <label htmlFor={id}>{label}</label>
     </div>
   );
 };
