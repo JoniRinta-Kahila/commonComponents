@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.6.1](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.6.0...v1.6.1) (2022-10-02)
+
+
+### Bug Fixes
+
+* fixed ssr problems, style updates ([3478443](https://github.com/JoniRinta-Kahila/commonComponents/commit/3478443bd58c9fcb894d26e17a7d6bbd1ca23277))
+* modal import ([5a0f8d2](https://github.com/JoniRinta-Kahila/commonComponents/commit/5a0f8d22293dd2c455079a643cf8e60b279b5b15))
+* **modal:** fix scroll not disable on modal open ([4d2cefd](https://github.com/JoniRinta-Kahila/commonComponents/commit/4d2cefdc309423357b4fbe310ced2cb80b28984f))
+
 ## [1.6.0](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.5.0...v1.6.0) (2022-09-28)
 
 
