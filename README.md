@@ -30,20 +30,65 @@
 
 I have created a library of components that I use frequently. These components are freely available to you. I will update this from time to time if I deem it necessary. It is also allowed to make a pull request if you believe that something needs to be added or corrected. [Here you can find documentation about the library's components](https://jonirinta-kahila.github.io/commonComponents).
 
-## Features
-* Button
-* Card
-* Inputs
-  * Checkbox
-    * Group
-  * Radio buttons
-    * Two different variation
-  * Sosical media buttons
-  * Text field
-* Collapsible
-* Modal with prompt feature
-* Navbar
-* Tooltip
+<h1>Features</h1>
+<div
+  style="
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+  ">
+  <div
+  style="
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+  ">
+  <h2>INPUTS</h2>
+  <ul>
+    <li>Button</li>
+    <li>Checkbox</li>
+    <li>Radio buttons</li>
+    <li>Sosical media buttons</li>
+    <li>Text field</li>
+  </ul>
+  </div>
+  <div
+  style="
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    width: 50%;
+  ">
+  <h2>DISPLAY</h2>
+  <ul>
+    <li>Card</li>
+    <li>Collapsible</li>
+    <li>Modal with prompt feature</li>
+    <li>Navbar</li>
+    <li>Tooltip</li>
+  </ul>
+  </div>
+    <div
+  style="
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+  ">
+    <h2>CONTEXT</h2>
+    <ul>
+      <li>Modal with prompt feature</li>
+    </ul>
+  </div>
+</div>
 
 </br>
 
