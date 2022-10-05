@@ -28,26 +28,6 @@ export interface TextAreaProps extends InputHTMLAttributes<HTMLTextAreaElement> 
   id?: string;
 }
 
-const testStyles: TextAreaStylesProps = {
-  colors: {
-    default: {
-      labelColor: '#000',
-      borderColor: '#000',
-      inputBackgroundColor: 'transparent',
-      inputColor: '#000',
-    },
-    focus: {
-      labelColor: 'blue',
-      borderColor: 'blue',
-      inputBackgroundColor: 'transparent',
-      inputColor: '#000',
-    },
-  },
-  controls: {
-    resizable: 'both',
-  },
-};
-
 const generateVariables = (obj: Record<string, any>) => {
   const vars: Record<string, string> = {};
   const iterateObj = (obj: Record<string, any>, parentKey?: string) => {
@@ -65,13 +45,13 @@ const generateVariables = (obj: Record<string, any>) => {
 
 export const TextArea: React.FC<TextAreaProps> = ({
   rows = 3,
-  styles = testStyles,
+  styles,
   label,
   id = `textarea_${label ? label + '_' : ''}${Math.floor(Math.random() * 690000)}`,
   ...rest
 }) => {
   return (
-    <div style={generateVariables(styles)} className='textarea-container'>
+    <div style={styles && generateVariables(styles)} className='textarea-container'>
       <textarea id={id} rows={rows} placeholder='placeholder' {...rest} />
       <label htmlFor={id}>{label}</label>
     </div>
