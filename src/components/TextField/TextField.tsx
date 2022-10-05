@@ -35,7 +35,7 @@ export interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const TextField: React.FC<TextFieldProps> = ({
-  label = 'Label',
+  label,
   type = 'text',
   name = `${type}_input_${label}`,
   id = `${type}_input_${label}_${Math.floor(Math.random() * 690000)}`,
