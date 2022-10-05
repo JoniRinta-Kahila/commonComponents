@@ -39,6 +39,7 @@ export type ModalOptions = {
 
 interface IModalContext {
   modal: (options: ModalOptions) => Promise<boolean>;
+  exitModal: () => void;
 }
 
 type ModalInternalOptions = ModalOptions & {
@@ -81,6 +82,7 @@ export const ModalContextProvider: React.FC<ModalContextProviderProps> = ({ chil
               });
             });
       },
+      exitModal: () => setOptions(undefined),
     }),
     []
   );
