@@ -5,7 +5,7 @@ import { TextArea } from './TextArea';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/TextArea",
+  title: "Inputs/TextArea",
   component: TextArea,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

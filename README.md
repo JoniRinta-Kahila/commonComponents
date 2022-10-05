@@ -54,6 +54,7 @@ I have created a library of components that I use frequently. These components a
     <li>Radio buttons</li>
     <li>Sosical media buttons</li>
     <li>Text field</li>
+    <li>Text area</li>
   </ul>
   </div>
   <div
