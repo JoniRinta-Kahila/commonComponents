@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.6.2...v1.7.0) (2022-10-05)
+
+
+### Features
+
+* **textarea:** new text area component ([8f69d0c](https://github.com/JoniRinta-Kahila/commonComponents/commit/8f69d0c00aeae87044795e03856d4e0719c81807))
+
+
+### Bug Fixes
+
+* **textfield:** remove default label ([86c4819](https://github.com/JoniRinta-Kahila/commonComponents/commit/86c48190aa674631871169d7d34554149dad57dc))
+
 ## [1.6.2](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.6.1...v1.6.2) (2022-10-03)
 
 
