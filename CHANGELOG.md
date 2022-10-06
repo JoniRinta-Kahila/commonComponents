@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.8.0-beta.1](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.7.0...v1.8.0-beta.1) (2022-10-06)
+
+
+### Features
+
+* **modal:** added option to close modal programmatically ([cf16923](https://github.com/JoniRinta-Kahila/commonComponents/commit/cf16923e625292d6291f05b58fc7d0045c481c10))
+
+
+### Bug Fixes
+
+* **textarea:** remove test styles ([5c21840](https://github.com/JoniRinta-Kahila/commonComponents/commit/5c21840d05beb7227b6fef972353c3e57ced8cb8))
+
 ## [1.7.0](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.6.2...v1.7.0) (2022-10-05)
 
 
