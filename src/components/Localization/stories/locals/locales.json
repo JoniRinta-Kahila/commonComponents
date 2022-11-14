@@ -1,0 +1,14 @@
+{
+  "EN": {
+    "MyApp": {
+      "string_1": "Hello, World!",
+      "string_2": "This is English."
+    }
+  },
+  "FI": {
+    "MyApp": {
+      "string_1": "Hei, Maailma!",
+      "string_2": "Tämä on Suomea."
+    }
+  }
+}

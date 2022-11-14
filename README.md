@@ -70,6 +70,7 @@ I have created a library of components that I use frequently. These components a
   <ul>
     <li>Card</li>
     <li>Collapsible</li>
+    <li>Localization</li>
     <li>Modal with prompt feature</li>
     <li>Navbar</li>
     <li>Tooltip</li>
