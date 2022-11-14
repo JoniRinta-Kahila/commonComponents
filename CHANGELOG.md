@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.8.0](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.7.1...v1.8.0) (2022-11-14)
+
+
+### Features
+
+* localization ([c8e4f20](https://github.com/JoniRinta-Kahila/commonComponents/commit/c8e4f200c99b2f7084eba06a7591fada12d1c266))
+
+
+### Bug Fixes
+
+* format code ([61c9306](https://github.com/JoniRinta-Kahila/commonComponents/commit/61c93066e6e08e25316ad57573de39b34d72da90))
+
 ## [1.7.1](https://github.com/JoniRinta-Kahila/commonComponents/compare/v1.7.0...v1.7.1) (2022-10-05)
 
 
