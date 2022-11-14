@@ -6,7 +6,7 @@ import Repo from '../../assets/repo.svg';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Display/Navbar",
+  title: 'Display/Navbar',
   component: Navbar,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -47,23 +47,21 @@ export default {
       defaultValue: true,
       description: 'Hide navbar on scroll down',
       type: 'boolean',
-    }
+    },
   },
   parameters: {
     layout: 'fullscreen',
     actions: {
-      handles: ['click', '.click-action']
+      handles: ['click', '.click-action'],
     },
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
-    }
+      canvas: { hidden: true },
+    },
   },
-
 } as ComponentMeta<typeof Navbar>;
 
 const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
-
 
 export const Default = Template.bind({});
 
@@ -73,37 +71,49 @@ const itemStyle = {
   fontWeight: 700,
   margin: '12px',
   cursor: 'pointer',
-}
+};
 
 const Logo: React.ReactNode = (
   <div>
-    <a href="" style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      textDecoration: 'none',
-      color: '#fff'
-    }}>
+    <a
+      href=''
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textDecoration: 'none',
+        color: '#fff',
+      }}
+    >
       <img src={Repo} alt='logo' />
       <p style={{ margin: 0 }}>Lorem, ipsum.</p>
     </a>
   </div>
-)
+);
 
 const Menu = (isMobile: boolean): React.ReactNode => (
-  <div style={{
-    display: 'flex',
-    flexDirection: isMobile ? 'column' : 'row',
-    padding: '0 20px'
-
-  }}>
-    <p className='link' style={itemStyle}>LINK-1</p>
-    <p className='link' style={itemStyle}>LINK-2</p>
-    <p className='link' style={itemStyle}>LINK-3</p>
-    <p className='link' style={itemStyle}>LINK-4</p>
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: isMobile ? 'column' : 'row',
+      padding: '0 20px',
+    }}
+  >
+    <p className='link' style={itemStyle}>
+      LINK-1
+    </p>
+    <p className='link' style={itemStyle}>
+      LINK-2
+    </p>
+    <p className='link' style={itemStyle}>
+      LINK-3
+    </p>
+    <p className='link' style={itemStyle}>
+      LINK-4
+    </p>
   </div>
-)
+);
 
 Default.args = {
   menuRendererEnd: Menu(false),
@@ -112,4 +122,4 @@ Default.args = {
   navbarPosition: 'initial',
   hideNavbarOnScroll: true,
   logoRenderer: Logo,
-}
+};

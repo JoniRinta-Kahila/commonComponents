@@ -5,12 +5,10 @@ import { TextArea } from './TextArea';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Inputs/TextArea",
+  title: 'Inputs/TextArea',
   component: TextArea,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    
-  },
+  argTypes: {},
   parameters: {
     layout: 'centered',
     viewMode: 'docs',
@@ -20,10 +18,10 @@ export default {
   },
 } as ComponentMeta<typeof TextArea>;
 
-const Template: ComponentStory<typeof TextArea> = (args) => <TextArea {...args} />
+const Template: ComponentStory<typeof TextArea> = (args) => <TextArea {...args} />;
 
 export const Default = Template.bind({});
 
 Default.args = {
-  label: 'Your story here'
-}
+  label: 'Your story here',
+};

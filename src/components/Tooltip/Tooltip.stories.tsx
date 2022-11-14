@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Tooltip } from './Tooltip';
 
 export default {
-  title: "Display/Tooltip",
+  title: 'Display/Tooltip',
   component: Tooltip,
   argTypes: {
     direction: {
@@ -21,7 +21,7 @@ export default {
     },
     toolTipColor: {
       description: 'tooltip color',
-    }
+    },
   },
   args: {
     children: 'HOVER ON ME',
@@ -31,28 +31,32 @@ export default {
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
-    }
+      canvas: { hidden: true },
+    },
   },
 } as ComponentMeta<typeof Tooltip>;
 
-const Template: ComponentStory<typeof Tooltip> = (args) => <Tooltip {...args} />
+const Template: ComponentStory<typeof Tooltip> = (args) => <Tooltip {...args} />;
 
 export const Default = Template.bind({});
 
 export const HTMLInside = Template.bind({});
 
 HTMLInside.args = {
- title: 'HTML INSIDE',
- direction: 'bottom',
- children: <div style={{
-  background: 'orangered',
-  height: '40px',
-  width: '80px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
- }}>
-  <h3>HTML</h3>
- </div>
-}
+  title: 'HTML INSIDE',
+  direction: 'bottom',
+  children: (
+    <div
+      style={{
+        background: 'orangered',
+        height: '40px',
+        width: '80px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <h3>HTML</h3>
+    </div>
+  ),
+};

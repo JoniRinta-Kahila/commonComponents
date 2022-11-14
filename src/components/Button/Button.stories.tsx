@@ -5,7 +5,7 @@ import { Button } from '.';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Inputs/Button",
+  title: 'Inputs/Button',
   component: Button,
   argTypes: {
     backgroundColor: {
@@ -17,7 +17,7 @@ export default {
       name: 'Label',
       defaultValue: 'Button',
       description: 'Set button label',
-      type: 'string'
+      type: 'string',
     },
     primary: {
       name: 'Primary',
@@ -29,18 +29,18 @@ export default {
       name: 'onClick',
       type: 'function',
       description: 'onClick',
-    }
+    },
   },
   parameters: {
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
-    }
+      canvas: { hidden: true },
+    },
   },
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

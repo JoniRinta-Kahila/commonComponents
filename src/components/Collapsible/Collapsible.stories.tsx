@@ -5,7 +5,7 @@ import { Collapsible } from './Collapsible';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const Story = {
-  title: "Display/Collapsible",
+  title: 'Display/Collapsible',
   component: Collapsible,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -42,18 +42,18 @@ const Story = {
     },
     labelColor: {
       description: 'color of the collapsible label',
-    }
+    },
   },
   parameters: {
     layout: 'centered',
     viewMode: 'docs',
     previewTabs: {
-      canvas: { hidden: true }
-    }
+      canvas: { hidden: true },
+    },
   },
 } as ComponentMeta<typeof Collapsible>;
 
-const Template: ComponentStory<typeof Collapsible> = (args) => <Collapsible {...args} />
+const Template: ComponentStory<typeof Collapsible> = (args) => <Collapsible {...args} />;
 
 export const Default = Template.bind({});
 
@@ -64,12 +64,12 @@ const Child = (
     <p>Lorem ipsum dolor sit amet consectetur.</p>
     <p>Lorem ipsum dolor sit.</p>
   </div>
-)
+);
 
 Default.args = {
   defaultOpen: false,
   label: 'Collapsible example',
   children: Child,
-}
+};
 
 export default Story;
